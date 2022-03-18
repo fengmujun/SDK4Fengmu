@@ -62,9 +62,9 @@ target.path = $$PWD/output/$$CompilerFLAG/$$SystemFLAG
 ##canfile.files += $$PWD/libs/3rd_zlgcan
 ##canfile.path += $$target.path
 
-
+#"build-%{Project:Name}-%{Kit:FileSystemName}-%{BuildConfig:Name}")}
 INCLUDEPATH += $$PWD/Log4Qt/src/
-LIBS += -L$$PWD/3rd/libs/log4qt/ -llog4qt
+#LIBS += -L$$PWD/3rd/build-log4qt-$$FileSystemName-%{BuildConfig:Name}/bin/ -llog4qt
 ##log4qtfile.files += $$PWD/libs/3rd_log4qt
 ##log4qtfile.path += $$target.path
 
