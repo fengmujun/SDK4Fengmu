@@ -1,0 +1,12 @@
+#ifndef BASICOBJECT_GLOBAL_H
+#define BASICOBJECT_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(BASICOBJECT_LIBRARY)
+#  define BASICOBJECT_EXPORT Q_DECL_EXPORT
+#else
+#  define BASICOBJECT_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // BASICOBJECT_GLOBAL_H
