@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     server->setCanServicePrivider(candevice);
 
-    CanDevice *can = new CanDevice();
+    CanDevice *can = new CanDevice(0);
     server->reg(can);
 
     QCanBusFrame msg(12, QByteArray::number(34));
