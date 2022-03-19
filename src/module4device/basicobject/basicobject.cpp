@@ -30,6 +30,21 @@ bool BasicObject::move(const int &pos, MOVEMODE movemode)
     return RTN;
 }
 
+int BasicObject::addcmd(int cmd, int value, QString strcmd)
+{
+
+}
+
+bool BasicObject::removecomd(QString strcmd)
+{
+
+}
+
+int BasicObject::sendcmd(QString strcmd, int value)
+{
+
+}
+
 int BasicObject::currentpos() const
 {
     return m_currentpos;
@@ -68,12 +83,7 @@ void BasicObject::initialProperty()
     m_min = 0;
     m_name = "";
     m_ID = 0;
-    m_cmdSetABS = 11;
-    m_cmdSetPos = 10;
-    m_cmdGetPos = 12;
-    m_cmdZero = 1;
-    m_cmdMove = 2;
-    m_cmdTrigger = 0x401;
+
 }
 
 int BasicObject::max() const
@@ -128,80 +138,3 @@ void BasicObject::setID(int newID)
     emit IDChanged();
 }
 
-int BasicObject::cmSetdABS() const
-{
-    return m_cmdSetABS;
-}
-
-void BasicObject::setCmdSetABS(int newCmdSetABS)
-{
-    if (m_cmdSetABS == newCmdSetABS)
-        return;
-    m_cmdSetABS = newCmdSetABS;
-    emit cmdSetABSChanged();
-}
-
-int BasicObject::cmdSetPos() const
-{
-    return m_cmdSetPos;
-}
-
-void BasicObject::setCmdSetPos(int newCmdSetPos)
-{
-    if (m_cmdSetPos == newCmdSetPos)
-        return;
-    m_cmdSetPos = newCmdSetPos;
-    emit cmdSetPosChanged();
-}
-
-int BasicObject::cmdGetPos() const
-{
-    return m_cmdGetPos;
-}
-
-void BasicObject::setCmdGetPos(int newCmdGetPos)
-{
-    if (m_cmdGetPos == newCmdGetPos)
-        return;
-    m_cmdGetPos = newCmdGetPos;
-    emit cmdGetPosChanged();
-}
-
-int BasicObject::cmdZero() const
-{
-    return m_cmdZero;
-}
-
-void BasicObject::setCmdZero(int newCmdZero)
-{
-    if (m_cmdZero == newCmdZero)
-        return;
-    m_cmdZero = newCmdZero;
-    emit cmdZeroChanged();
-}
-
-int BasicObject::cmdMove() const
-{
-    return m_cmdMove;
-}
-
-void BasicObject::setCmdMove(int newCmdMove)
-{
-    if (m_cmdMove == newCmdMove)
-        return;
-    m_cmdMove = newCmdMove;
-    emit cmdMoveChanged();
-}
-
-int BasicObject::cmdTrigger() const
-{
-    return m_cmdTrigger;
-}
-
-void BasicObject::setCmdTrigger(int newCmdTrigger)
-{
-    if (m_cmdTrigger == newCmdTrigger)
-        return;
-    m_cmdTrigger = newCmdTrigger;
-    emit cmdTriggerChanged();
-}

@@ -1,3 +1,4 @@
+//basicobject with basic params set and get fuction
 #ifndef BASICOBJECT_H
 #define BASICOBJECT_H
 
@@ -15,12 +16,6 @@ class BasicObject : public QObject
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(int ID READ ID WRITE setID NOTIFY IDChanged)
 
-    Q_PROPERTY(int cmdSetABS READ cmSetdABS WRITE setCmdSetABS NOTIFY cmdSetABSChanged)
-    Q_PROPERTY(int cmdSetPos READ cmdSetPos WRITE setCmdSetPos NOTIFY cmdSetPosChanged)
-    Q_PROPERTY(int cmdGetPos READ cmdGetPos WRITE setCmdGetPos NOTIFY cmdGetPosChanged)
-    Q_PROPERTY(int cmdZero READ cmdZero WRITE setCmdZero NOTIFY cmdZeroChanged)
-    Q_PROPERTY(int cmdMove READ cmdMove WRITE setCmdMove NOTIFY cmdMoveChanged)
-    Q_PROPERTY(int cmdTrigger READ cmdTrigger WRITE setCmdTrigger NOTIFY cmdTriggerChanged)
 
 
 public:
@@ -64,24 +59,6 @@ public:
     int ID() const;
     void setID(int newID);
 
-    int cmSetdABS() const;
-    void setCmdSetABS(int newCmdSetABS);
-
-    int cmdSetPos() const;
-    void setCmdSetPos(int newCmdSetPos);
-
-    int cmdGetPos() const;
-    void setCmdGetPos(int newCmdGetPos);
-
-    int cmdZero() const;
-    void setCmdZero(int newCmdZero);
-
-    int cmdMove() const;
-    void setCmdMove(int newCmdMove);
-
-    int cmdTrigger() const;
-    void setCmdTrigger(int newCmdTrigger);
-
 private:
 
     virtual void initialProperty();
@@ -100,18 +77,6 @@ signals:
 
     void IDChanged();
 
-    void cmdSetABSChanged();
-
-    void cmdSetPosChanged();
-
-    void cmdGetPosChanged();
-
-    void cmdZeroChanged();
-
-    void cmdMoveChanged();
-
-    void cmdTriggerChanged();
-
 private:
     int m_currentpos;
     int m_lastpos;
@@ -119,12 +84,6 @@ private:
     int m_min;
     QString m_name;
     int m_ID;
-    int m_cmdSetABS;
-    int m_cmdSetPos;
-    int m_cmdGetPos;
-    int m_cmdZero;
-    int m_cmdMove;
-    int m_cmdTrigger;
 };
 
 #endif // BASICOBJECT_H
